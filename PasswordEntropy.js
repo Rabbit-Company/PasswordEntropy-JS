@@ -13,7 +13,7 @@ class PasswordEntropy{
 	}
 
 	static calculate(password){
-		if(typeof(password) != 'string' || password == null) password = "";
+		if(typeof(password) != 'string' || password == null) return 0;
 
 		let pool = 0;
 		if(this.includesChar(password, this.lcase)) pool += 26;
@@ -21,7 +21,7 @@ class PasswordEntropy{
 		if(this.includesChar(password, this.numb)) pool += 10;
 		if(this.includesChar(password, this.symbol)) pool += 33;
 		if(!this.includesChar(password, this.lcase + this.ucase + this.numb + this.symbol)) pool += 100;
-		if(pool == 0) pool++;
+		if(pool == 0) return 0;
 
 		return Math.round(password.length * Math.log(pool) / Math.LN2);
 	}
