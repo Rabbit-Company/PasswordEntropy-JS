@@ -1,4 +1,4 @@
-document.getElementById("btn-calculate").addEventListener('click', () => {
+document.getElementById("password").addEventListener('input', () => {
 	let password = document.getElementById("password").value;
 
 	document.getElementById("result").innerText = PasswordEntropy.calculate(password);
