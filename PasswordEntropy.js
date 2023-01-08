@@ -1,7 +1,7 @@
 /*
-PasswordEntropy-JS v1.0.2
+PasswordEntropy-JS v1.0.3
 https://github.com/Rabbit-Company/PasswordEntropy-JS
-License: GPL-3.0
+License: MIT
 */
 
 class PasswordEntropy{
