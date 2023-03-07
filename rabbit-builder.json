@@ -16,9 +16,8 @@
 				},
 				"minifyJS": {
 					"action": "minifyJS",
-					"sourceMap": {
-						"location": "."
-					}
+					"sourceMap": "linked",
+					"bundle": {}
 				}
 			}
 		}

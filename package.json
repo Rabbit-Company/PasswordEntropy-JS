@@ -33,6 +33,6 @@
 		"strength"
 	],
 	"devDependencies": {
-		"@rabbit-company/rabbit-builder": "^1.0.3"
+		"@rabbit-company/rabbit-builder": "^1.0.4"
 	}
 }
