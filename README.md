@@ -1,6 +1,6 @@
 # PasswordEntropy-JS
 
-Password Entropy implementation in JavaScript (ES6).
+Password entropy implementation in JavaScript (ES6).
 
 This library will calculate the entropy of provided passwords.
 
