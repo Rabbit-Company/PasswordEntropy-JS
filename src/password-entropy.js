@@ -1,10 +1,4 @@
-/*
-PasswordEntropy-JS v1.0.3
-https://github.com/Rabbit-Company/PasswordEntropy-JS
-License: MIT
-*/
-
-class PasswordEntropy{
+export default class PasswordEntropy{
 
 	static lcase = "abcdefghijklmnopqrstuvwxyz";
 	static ucase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

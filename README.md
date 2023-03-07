@@ -1,17 +1,22 @@
 # PasswordEntropy-JS
 
-Password Entropy implementation in a plain JavaScript.
+Password Entropy implementation in JavaScript (ES6).
 
-This library will calculate the entropy of your password.
+This library will calculate the entropy of provided passwords.
 
 ## Usage
 
-### 1. Import library
-```html
-<script src="PasswordEntropy.min.js"></script>
+### 1. Download library
+```bash
+npm i --save @rabbit-company/password-entropy
 ```
 
-### 2. Calculate Entropy
+### 2. Import library
+```js
+import PasswordEntropy from "@rabbit-company/password-entropy";
+```
+
+### 3. Calculate Entropy
 ```js
 PasswordEntropy.calculate(password);
 ```

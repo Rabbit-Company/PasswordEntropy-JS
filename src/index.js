@@ -1,3 +1,5 @@
+import PasswordEntropy from "./password-entropy.js";
+
 document.getElementById("password").addEventListener('input', () => {
 	let password = document.getElementById("password").value;
 
