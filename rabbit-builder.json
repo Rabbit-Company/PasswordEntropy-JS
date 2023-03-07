@@ -1,8 +1,8 @@
 {
-  "code": {
-    "location": "src"
-  },
-  "tasks": {
+	"code": {
+		"location": "src"
+	},
+	"tasks": {
 		"default": {
 			"location": "dist",
 			"output": ".",
