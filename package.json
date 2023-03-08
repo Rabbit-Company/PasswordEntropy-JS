@@ -1,6 +1,6 @@
 {
 	"name": "@rabbit-company/password-entropy",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "Password entropy calculator",
 	"main": "./src/password-entropy.js",
 	"type": "module",
@@ -13,7 +13,7 @@
 		"build": "rabbit-builder"
 	},
 	"files": [
-		"src"
+		"src/password-entropy.js"
 	],
 	"repository": {
 		"type": "git",

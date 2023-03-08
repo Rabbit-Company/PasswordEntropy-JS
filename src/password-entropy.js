@@ -13,7 +13,7 @@ export default class PasswordEntropy{
 	}
 
 	static calculate(password){
-		if(typeof(password) != 'string' || password == null) return 0;
+		if(typeof(password) !== 'string') return 0;
 
 		let pool = 0;
 		if(this.includesChar(password, this.lcase)) pool += 26;
