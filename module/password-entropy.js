@@ -4,7 +4,7 @@ class PasswordEntropy {
   static ucase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   static numb = "1234567890";
   static symbol = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
-  static includesChar(text, charlist) {
+  static _includesChar(text, charlist) {
     for (let i = 0;i < text.length; i++) {
       if (charlist.includes(text[i]))
         return true;
@@ -15,15 +15,15 @@ class PasswordEntropy {
     if (typeof password !== "string")
       return 0;
     let pool = 0;
-    if (this.includesChar(password, this.lcase))
+    if (this._includesChar(password, this.lcase))
       pool += 26;
-    if (this.includesChar(password, this.ucase))
+    if (this._includesChar(password, this.ucase))
       pool += 26;
-    if (this.includesChar(password, this.numb))
+    if (this._includesChar(password, this.numb))
       pool += 10;
-    if (this.includesChar(password, this.symbol))
+    if (this._includesChar(password, this.symbol))
       pool += 33;
-    if (!this.includesChar(password, this.lcase + this.ucase + this.numb + this.symbol))
+    if (!this._includesChar(password, this.lcase + this.ucase + this.numb + this.symbol))
       pool += 100;
     if (pool == 0)
       return 0;
