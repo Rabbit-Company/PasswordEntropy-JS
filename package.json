@@ -1,38 +1,45 @@
 {
-	"name": "@rabbit-company/password-entropy",
-	"version": "1.1.2",
-	"description": "Password entropy calculator",
-	"main": "./src/password-entropy.js",
-	"type": "module",
-	"homepage": "https://github.com/Rabbit-Company/PasswordEntropy-JS",
-	"funding": "https://rabbit-company.com/donation",
-	"author": "Rabbit Company <info@rabbit-company.com>",
-	"license": "MIT",
-	"private": false,
-	"scripts": {
-		"build": "rabbit-builder"
-	},
-	"files": [
-		"src/password-entropy.js"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Rabbit-Company/PasswordEntropy-JS.git"
-	},
-	"contributors": [
-		"Rabbit Company <info@rabbit-company.com> (https://github.com/Rabbit-Company)"
-	],
-	"bugs": {
-		"url": "https://github.com/Rabbit-Company/PasswordEntropy-JS/issues",
-		"email": "info@rabbit-company.com"
-	},
-	"keywords": [
-		"password",
-		"entropy",
-		"security",
-		"strength"
-	],
-	"devDependencies": {
-		"@rabbit-company/rabbit-builder": "^1.0.4"
-	}
+  "name": "@rabbit-company/password-entropy",
+  "version": "2.0.0",
+  "description": "Password entropy calculator",
+  "main": "./module/password-entropy.js",
+	"browser": "./module/password-entropy.js",
+  "type": "module",
+  "homepage": "https://github.com/Rabbit-Company/PasswordEntropy-JS",
+  "funding": "https://rabbit-company.com/donation",
+  "author": "Rabbit Company <info@rabbit-company.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "bun run build.ts"
+  },
+  "files": [
+		"module/password-entropy.js",
+		"module/password-entropy.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rabbit-Company/PasswordEntropy-JS.git"
+  },
+  "contributors": [
+    "Rabbit Company <info@rabbit-company.com> (https://github.com/Rabbit-Company)"
+  ],
+  "bugs": {
+    "url": "https://github.com/Rabbit-Company/PasswordEntropy-JS/issues",
+    "email": "info@rabbit-company.com"
+  },
+  "keywords": [
+    "password",
+    "entropy",
+    "security",
+    "strength"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.2.1",
+		"@rabbit-company/logger": "^2.1.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }

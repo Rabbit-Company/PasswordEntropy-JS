@@ -5,14 +5,14 @@ export default class PasswordEntropy{
 	static numb = "1234567890";
 	static symbol = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
 
-	static includesChar(text, charlist){
+	static includesChar(text: string, charlist: string): boolean{
 		for(let i = 0; i < text.length; i++){
 			if(charlist.includes(text[i])) return true;
 		}
 		return false;
 	}
 
-	static calculate(password){
+	static calculate(password: string): number{
 		if(typeof(password) !== 'string') return 0;
 
 		let pool = 0;
