@@ -1,43 +1,49 @@
 /**
- * PasswordEntropy class provides methods for calculating password entropy.
-*/
-export default class PasswordEntropy {
+ * The `PasswordEntropy` namespace provides methods for calculating the entropy of a password.
+ *
+ * Developers can customize the character sets used for entropy calculation by modifying
+ * the properties `lcase`, `ucase`, `numb`, and `symbol`.
+ */
+declare namespace PasswordEntropy {
 	/**
-   * Lowercase letters: "abcdefghijklmnopqrstuvwxyz".
-   * @type {string}
-  */
-	static lcase: string;
+	 * Lowercase letters used in password entropy calculation. Developers can customize this string.
+	 * Default: "abcdefghijklmnopqrstuvwxyz".
+	 * @type {string}
+	 */
+	let lcase: string;
 	/**
-   * Uppercase letters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".
-   * @type {string}
-  */
-	static ucase: string;
+	 * Uppercase letters used in password entropy calculation. Developers can customize this string.
+	 * Default: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".
+	 * @type {string}
+	 */
+	let ucase: string;
 	/**
-   * Numbers: "1234567890".
-   * @type {string}
-  */
-	static numb: string;
+	 * Numbers used in password entropy calculation. Developers can customize this string.
+	 * Default: "1234567890".
+	 * @type {string}
+	 */
+	let numb: string;
 	/**
-   * Symbols: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ".
-   * @type {string}
-  */
-	static symbol: string;
+	 * Symbols used in password entropy calculation. Developers can customize this string.
+	 * Default: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ".
+	 * @type {string}
+	 */
+	let symbol: string;
 	/**
-   * Checks if the given text includes any character from the provided character list.
-   *
-   * @private
-   * @param {string} text - The text to check.
-	 * @param {string} charlist - The character list to check against.
-	 * @returns {boolean} True if the text includes any character from the character list, false otherwise.
-  */
-	private static _includesChar;
-	/**
-   * Calculates the entropy of a given password.
-   *
-   * @param {string} password - The password for which to calculate entropy.
-   * @returns {number} The calculated password entropy.
-  */
-	static calculate(password: string): number;
+	 * Calculates the entropy of a given password.
+	 *
+	 * @param {string} password - The password for which to calculate entropy.
+	 * @returns {number} The calculated password entropy.
+	 *
+	 * @example
+	 * const entropy = PasswordEntropy.calculate("P@ssw0rd");
+	 * console.log(entropy); // Outputs the entropy value for the given password
+	 */
+	function calculate(password: string): number;
 }
+
+export {
+	PasswordEntropy as default,
+};
 
 export {};

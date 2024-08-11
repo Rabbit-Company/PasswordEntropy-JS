@@ -1,35 +1,38 @@
 // src/password-entropy.ts
-class PasswordEntropy {
-  static lcase = "abcdefghijklmnopqrstuvwxyz";
-  static ucase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  static numb = "1234567890";
-  static symbol = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
-  static _includesChar(text, charlist) {
+var PasswordEntropy;
+((PasswordEntropy) => {
+  PasswordEntropy.lcase = "abcdefghijklmnopqrstuvwxyz";
+  PasswordEntropy.ucase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  PasswordEntropy.numb = "1234567890";
+  PasswordEntropy.symbol = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
+  function _includesChar(text, charlist) {
     for (let i = 0;i < text.length; i++) {
       if (charlist.includes(text[i]))
         return true;
     }
     return false;
   }
-  static calculate(password) {
+  function calculate(password) {
     if (typeof password !== "string")
       return 0;
     let pool = 0;
-    if (this._includesChar(password, this.lcase))
-      pool += 26;
-    if (this._includesChar(password, this.ucase))
-      pool += 26;
-    if (this._includesChar(password, this.numb))
-      pool += 10;
-    if (this._includesChar(password, this.symbol))
-      pool += 33;
-    if (!this._includesChar(password, this.lcase + this.ucase + this.numb + this.symbol))
+    if (_includesChar(password, PasswordEntropy.lcase))
+      pool += PasswordEntropy.lcase.length;
+    if (_includesChar(password, PasswordEntropy.ucase))
+      pool += PasswordEntropy.ucase.length;
+    if (_includesChar(password, PasswordEntropy.numb))
+      pool += PasswordEntropy.numb.length;
+    if (_includesChar(password, PasswordEntropy.symbol))
+      pool += PasswordEntropy.symbol.length;
+    if (!_includesChar(password, PasswordEntropy.lcase + PasswordEntropy.ucase + PasswordEntropy.numb + PasswordEntropy.symbol))
       pool += 100;
     if (pool == 0)
       return 0;
     return Math.round(password.length * Math.log(pool) / Math.LN2);
   }
-}
+  PasswordEntropy.calculate = calculate;
+})(PasswordEntropy ||= {});
+var password_entropy_default = PasswordEntropy;
 export {
-  PasswordEntropy as default
+  password_entropy_default as default
 };
